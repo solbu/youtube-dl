@@ -118,7 +118,7 @@ youtube_dl/extractor/lazy_extractors.py: devscripts/make_lazy_extractors.py devs
 	$(PYTHON) devscripts/make_lazy_extractors.py $@
 
 VERSION = $(shell grep version youtube_dl/version.py |cut -f2 -d "'")
-youtube-dl.tar.gz: youtube-dl README.md README.txt youtube-dl.1 youtube-dl.bash-completion youtube-dl.zsh youtube-dl.fish ChangeLog AUTHORS
+youtube-dl.tar.gz: README.md README.txt youtube-dl.1 youtube-dl.bash-completion youtube-dl.zsh youtube-dl.fish ChangeLog AUTHORS
 	@tar -czf youtube-dl-$(VERSION).tar.gz --transform "s|^|youtube-dl-$(VERSION)/|" --owner 0 --group 0 \
 		--exclude '*.DS_Store' \
 		--exclude '*.kate-swp' \
@@ -133,4 +133,3 @@ youtube-dl.tar.gz: youtube-dl README.md README.txt youtube-dl.1 youtube-dl.bash-
 		ChangeLog AUTHORS LICENSE README.md README.txt \
 		Makefile MANIFEST.in youtube-dl.1 youtube-dl.bash-completion \
 		youtube-dl.zsh youtube-dl.fish setup.py setup.cfg \
-		youtube-dl
